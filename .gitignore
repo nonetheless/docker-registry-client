@@ -1,0 +1,8 @@
+### Goland IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml

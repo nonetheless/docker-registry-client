@@ -3,15 +3,10 @@
 An API client for the [V2 Docker Registry
 API](http://docs.docker.com/registry/spec/api/), for Go applications.
 
-## Imports
+## GET START
+```bash
+go get github.com/nonetheless/docker-registry-client@v1.2.0
 
-```go
-import (
-    "github.com/heroku/docker-registry-client/registry"
-    "github.com/docker/distribution/digest"
-    "github.com/docker/distribution/manifest"
-    "github.com/docker/libtrust"
-)
 ```
 
 ## Creating A Client
