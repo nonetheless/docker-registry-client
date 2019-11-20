@@ -1,11 +1,13 @@
 package registry
 
+import "fmt"
+
 type tagsResponse struct {
 	Tags []string `json:"tags"`
 }
 
 func (registry *Registry) Tags(repository string) (tags []string, err error) {
-	url := registry.url("/v2/%s/tags/list", repository)
+	url := fmt.Sprintf("/v2/%s/tags/list", repository)
 
 	var response tagsResponse
 	for {
