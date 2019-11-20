@@ -11,9 +11,13 @@ func (registry *Registry) Repositories() ([]string, error) {
 
 	registry.Logf("registry.repositories url=%s", url)
 	url, err = registry.getPaginatedJson(url, &response)
-	if err != nil {
+	switch err {
+	case ErrNoMorePages:
+		return response.Repositories, nil
+	case nil:
+		return response.Repositories, nil
+	default:
 		return nil, err
 	}
-	return response.Repositories, nil
 
 }
