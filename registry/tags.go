@@ -5,12 +5,12 @@ type tagsResponse struct {
 }
 
 func (registry *Registry) Tags(repository string) (tags []string, err error) {
-	url := "/v2/%s/tags/list"
+	url := registry.url("/v2/%s/tags/list", repository)
 
 	var response tagsResponse
 	for {
 		registry.Logf("registry.tags url=%s repository=%s", url, repository)
-		url = registry.url(url, registry)
+		url = registry.url(url)
 		url, err = registry.getPaginatedJson(url, &response)
 		switch err {
 		case ErrNoMorePages:
